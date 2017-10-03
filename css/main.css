@@ -1,0 +1,17 @@
+body { 
+    padding-top: 65px; 
+}
+
+.margin1{
+	margin-top: 1em;
+}
+
+.aligned-row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.vcenter {
+     display: inline-block;
+  vertical-align: middle;
+}
