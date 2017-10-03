@@ -1,5 +1,6 @@
 body { 
     padding-top: 65px; 
+
 }
 
 .margin1{
@@ -12,8 +13,8 @@ body {
 }
 
 .vcenter {
-     display: inline-block;
-  vertical-align: middle;
+     display: flex;
+     align-items: center;
 }
 
 .navblue{
@@ -23,4 +24,16 @@ body {
 
 .navwhite{
 	color: #FFFFFF;
+}
+
+.bggray{
+	background-color: #F7F7F9;
+	padding: 1em;
+	border-style: groove;
+	border-radius: 6px;
+}
+
+.btn{
+	padding-right: 2em;
+	padding-left: 2em;
 }
