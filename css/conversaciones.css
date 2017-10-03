@@ -1,0 +1,36 @@
+
+.vcenter > span{
+	flex-direction: column;
+}
+
+.chat{
+	background-color: white;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+	padding-left: 1em;
+	padding-right: 1em;
+	background-color: #ffffcc;
+		 
+	
+		    
+}
+
+.col-md-8.chat{
+	margin: 0.5em;
+	border-radius: 6px;
+	padding-top: 0.5em;
+		padding-bottom: 0.5em;
+		
+		background-color: white;
+		    
+
+	}
+
+.chat.pull-right{
+	background-color: #E2FDCA;
+	color: black;
+	margin: 0.5em;
+}
+
+
+
+
