@@ -29,6 +29,7 @@
   <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
   <script src="js/ie-emulation-modes-warning.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
           <!--[if lt IE 9]>
@@ -68,7 +69,10 @@
           <div class="col-md-12">
 
   <div>
-    <a href="index.html"><input class="btn btn-default pull-right" type="button" value="Guardar Usuario"></a>
+  <a href="index.html"><input class="btn btn-default pull-right" type="button" value="Regresar" onclick="limpiar()"></a>
+    <input class="btn btn-default pull-right" type="button" value="Guardar" onclick="crearUsuario()">
+    
+
   </div>
 
   <div class="aligned-row">
@@ -86,7 +90,7 @@
 
   <b class="col-md-4 vcenter">Nombre:</b>
   <div class="col-md-8">
-   <input type="text" class="form-control " id="exampleInputEmail1">
+   <input type="text" class="form-control " id="nombre">
  </div>
 
 </div>
@@ -95,7 +99,7 @@
   
   <b class="col-md-4 vcenter">Departamento:</b>
   <div class="col-md-8">
-   <input type="text" class="form-control " id="exampleInputEmail1">
+   <input type="text" class="form-control " id="departamento">
  </div>
  
 </div>
@@ -104,7 +108,7 @@
   
   <b class="col-md-4 vcenter">Puesto:</b>
   <div class="col-md-8">
-   <input type="text" class="form-control " id="exampleInputEmail1">
+   <input type="text" class="form-control " id="puesto">
  </div>
  
 </div>
@@ -113,7 +117,7 @@
   
   <b class="col-md-4 vcenter">Telefono:</b>
   <div class="col-md-8">
-   <input type="phone" class="form-control " id="exampleInputEmail1">
+   <input type="phone" class="form-control " id="telefono">
  </div>
  
 </div>
@@ -122,12 +126,12 @@
   
   <b class="col-md-4 vcenter">Email:</b>
   <div class="col-md-8">
-   <input type="email" class="form-control " id="exampleInputEmail1">
+   <input type="email" class="form-control " id="email">
  </div>
+
+ <div class="row" id="demo"></div>
  
 </div>
-
-
 
 
 
@@ -155,6 +159,11 @@
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
             <script src="js/bootstrap.min.js"></script>
+            <script src="js/firebase_connect.js"></script>
+            <script src="js/nuevo_usuario.js"></script>
+         
+          
+
             <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
             <script src="js/ie10-viewport-bug-workaround.js"></script>
           </body>

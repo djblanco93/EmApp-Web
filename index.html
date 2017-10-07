@@ -29,6 +29,8 @@
   <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
   <script src="js/ie-emulation-modes-warning.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+   <script src="js/firebase_connect.js"></script>
+
 
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -105,7 +107,7 @@
   </div>
 
   <div class="col-md-9 vcenter">
-    <input class="btn btn-default center-block" type="button" value="Actualizar">
+    <input class="btn btn-default center-block" type="button" value="Actualizar" onclick="actualizar()">
     <input class="btn btn-default center-block" type="button" value="Desactivar">
   </div>
     
@@ -116,16 +118,15 @@
 
   <b class="col-md-4 vcenter">Nombre:</b>
   <div class="col-md-8">
-   <input type="text" class="form-control " id="exampleInputEmail1" value="Ana Lucrecia Hernandez Perez">
- </div>
+   <input type="text" class="form-control " id="nombre">
 
 </div>
-
+</div>
 <div class= "margin1 aligned-row">
   
   <b class="col-md-4 vcenter">Departamento:</b>
   <div class="col-md-8">
-   <input type="text" class="form-control " id="exampleInputEmail1" value="RRHH">
+   <input type="text" class="form-control " id="departamento">
  </div>
  
 </div>
@@ -134,7 +135,7 @@
   
   <b class="col-md-4 vcenter">Puesto:</b>
   <div class="col-md-8">
-   <input type="text" class="form-control " id="exampleInputEmail1" value="Secretaria">
+   <input type="text" class="form-control " id="puesto">
  </div>
  
 </div>
@@ -143,7 +144,7 @@
   
   <b class="col-md-4 vcenter">Telefono:</b>
   <div class="col-md-8">
-   <input type="phone" class="form-control " id="exampleInputEmail1" value="45956785">
+   <input type="phone" class="form-control " id="telefono">
  </div>
  
 </div>
@@ -152,13 +153,54 @@
   
   <b class="col-md-4 vcenter">Email:</b>
   <div class="col-md-8">
-   <input type="email" class="form-control " id="exampleInputEmail1" value="analhernandez@emapp.com">
+   <input type="email" class="form-control " id="email">
  </div>
  
 </div>
 
 
 
+
+
+
+<script type="text/javascript">
+
+function getId(data){
+
+  var ref = firebase.database().ref('usuario/' + data.id);
+  
+  ref.once("value", function(snapshot){
+    var dato = snapshot.val();
+    document.getElementById('nombre').value = dato.nombre;
+    document.getElementById('nombre').name = data.id;
+   document.getElementById('departamento').value = dato.departamento;
+        document.getElementById('puesto').value = dato.puesto;
+                document.getElementById('telefono').value = dato.telefono;
+                                document.getElementById('email').value = dato.email;
+
+
+
+  });
+};
+
+function actualizar(){
+ 
+
+var ref = firebase.database().ref('usuario/' + document.getElementById('nombre').name);
+var obj ={
+  nombre: document.getElementById('nombre').value,
+  departamento: document.getElementById('departamento').value,
+  telefono: document.getElementById('telefono').value,
+  email: document.getElementById('email').value,
+};
+ref.update(obj);
+
+};
+
+
+</script>
+
+   
 
 
 
@@ -178,10 +220,12 @@
           <!-- Bootstrap core JavaScript
             ================================================== -->
             <!-- Placed at the end of the document so the pages load faster -->
-            <script src="js/firebase_connect.js"></script>
+            
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
             <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
             <script src="js/bootstrap.min.js"></script>
+            <script src="js/main.js"></script>
+           
             <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
             <script src="js/ie10-viewport-bug-workaround.js"></script>
           </body>
