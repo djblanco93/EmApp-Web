@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TODO supply a title</title>
+         <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+    </head>
+    <body>
+       <div class="container-fluid">
+	<div class="row vertical-center">
+		<div class="col-md-12">
+			<h1 class="text-center">
+				EmApp
+			</h1>
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-8">
+					<form role="form">
+						<div class="form-group">
+							 
+							<label for="exampleInputEmail1">
+								Email address
+							</label>
+							<input type="email" class="form-control" id="exampleInputEmail1" />
+						</div>
+						<div class="form-group">
+							 
+							<label for="exampleInputPassword1">
+								Password
+							</label>
+							<input type="password" class="form-control" id="exampleInputPassword1" />
+						</div>
+						
+						
+					</form>
+                                    
+                                    <button class="btn btn-default" onclick="login();">
+							Submit
+						</button>
+				</div>
+				<div class="col-md-2">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+        <script>
+            function login(){
+                
+                location.href = "http://stackoverflow.com";
+              
+               firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  
+  
+  // ...
+});
+            }
+            
+            
+        </script>
+         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    
+       </body>
+</html>
